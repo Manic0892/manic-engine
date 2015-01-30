@@ -1,18 +1,19 @@
 ////////////////////////////////////////////////////////////////////////////////
 /*!
-\file:    main.cpp
+\file:    Game.h
 \author:  Sean McGeer
 \date:    1/29/15
 \brief:
-  Instantiate the main game object.
+  Define the main Game object.
 */
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "Game.h"
-
-int main()
+class Game
 {
-  Game gameObject;
+  public:
+    Game();
+    ~Game();
+    int Run();  
   
-  return gameObject.Run();
-}
+  private:
+};

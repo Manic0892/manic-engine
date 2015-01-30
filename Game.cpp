@@ -1,18 +1,28 @@
 ////////////////////////////////////////////////////////////////////////////////
 /*!
-\file:    main.cpp
+\file:    Game.h
 \author:  Sean McGeer
 \date:    1/29/15
 \brief:
-  Instantiate the main game object.
+  Implement the main Game object.
 */
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "Game.h"
+#include <iostream>
 
-int main()
+Game::Game()
 {
-  Game gameObject;
   
-  return gameObject.Run();
+}
+
+Game::~Game()
+{
+  
+}
+
+int Game::Run()
+{
+  std::cout << "Hello, world!" << std::endl;
+  return 0;
 }
