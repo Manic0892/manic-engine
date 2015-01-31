@@ -12,7 +12,7 @@
 
 int main()
 {
-  Game gameObject;
+  Game gameObject(60);
   
   return gameObject.Run();
 }

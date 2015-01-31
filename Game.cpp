@@ -11,9 +11,9 @@
 #include "Game.h"
 #include <iostream>
 
-Game::Game()
+Game::Game(int FrameRate)
 {
-  
+  FrameRate_ = FrameRate;
 }
 
 Game::~Game()
@@ -23,6 +23,6 @@ Game::~Game()
 
 int Game::Run()
 {
-  std::cout << "Hello, world!" << std::endl;
+  std::cout << "Hello, world!  Framerate set to: " << FrameRate_ << std::endl;
   return 0;
 }

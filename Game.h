@@ -11,9 +11,10 @@
 class Game
 {
   public:
-    Game();
+    Game(int FrameRate);
     ~Game();
-    int Run();  
+    int Run();
   
   private:
+    int FrameRate_;
 };
