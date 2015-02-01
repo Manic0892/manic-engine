@@ -10,10 +10,24 @@
 
 #include "Game.h"
 #include <getopt.h>
+#include <stdlib.h>
 
-int main()
+int main(int argc, char **argv)
 {
-  Game gameObject(60);
+  int framerate = 60;
+  int opt;
+  
+  while ((opt = getopt(argc, argv, "f:")) != -1) 
+  {
+     switch (opt) 
+     {
+      case 'f':
+        framerate = atoi(optarg);
+        break;
+     }
+  }
+  
+  Game gameObject(framerate);
   
   return gameObject.Run();
 }
