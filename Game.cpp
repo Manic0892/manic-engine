@@ -1,12 +1,14 @@
 /*!
-  \file   Game.h
+  \file   Game.cpp
   \author Sean McGeer
   \date   1/29/15
   \brief
     Implement the main Game object.
 */
-#include "Game.h"
-#include <iostream>
+
+#include <iostream>           // cout, endl
+#include "Game.h"             // Game
+#include "GameStateManager.h" // GameStateManager
 
 /*!
   Creates a new game object.
