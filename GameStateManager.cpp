@@ -13,9 +13,20 @@
 */
 GameStateManager::GameStateManager()
 {
-  _Previous = Level_1;
-  _Current = Level_1;
-  _Next = Level_1;
+  Previous_ = Level;
+  Current_ = Level;
+  Next_ = Level;
+}
+
+GameStateManager::Update()
+{
+  switch (Next_)
+  {
+    case Level:
+      break;
+    default:
+      break;
+  }
 }
 
 GameStateManager::~GameStateManager()

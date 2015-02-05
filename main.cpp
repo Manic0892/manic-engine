@@ -1,12 +1,10 @@
-////////////////////////////////////////////////////////////////////////////////
 /*!
-\file     main.cpp
-\author   Sean McGeer
-\date     1/29/15
-\brief
-  Instantiate the main game object.
+  \file     main.cpp
+  \author   Sean McGeer
+  \date     1/29/15
+  \brief
+    Instantiate the main game object.
 */
-////////////////////////////////////////////////////////////////////////////////
 
 #include "Game.h"
 #include <getopt.h>
