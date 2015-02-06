@@ -1,16 +1,25 @@
 CC=g++
-DIR=bin/
+BIN=bin/
+SRC=src/
 CFLAGS=-Wall -Wextra -Werror -ansi -pedantic -O -c
-OBJECTS=$(DIR)Game.o $(DIR)main.o
-BIN=$(DIR)me
+OBJECTS=$(BIN)main.o $(BIN)Game.o $(BIN)GameStateManager.o $(BIN)Level.o
+EXE=$(BIN)me
 
 all: $(OBJECTS)
-	$(CC) $(OBJECTS) -o $(BIN)
+	$(CC) $(OBJECTS) -o $(EXE)
 
-$(DIR)Game.o: Game.cpp Game.h
-	$(CC) $(CFLAGS) -o $(DIR)Game.o Game.cpp
+$(BIN)main.o: $(SRC)main.cpp $(SRC)Game.h
+	$(CC) $(CFLAGS) -o $(BIN)main.o $(SRC)main.cpp
 
-$(DIR)main.o: main.cpp Game.h
-	$(CC) $(CFLAGS) -o $(DIR)main.o main.cpp
+$(BIN)Game.o: $(SRC)Game.cpp $(SRC)Game.h $(SRC)GameStateManager.h
+	$(CC) $(CFLAGS) -o $(BIN)Game.o $(SRC)Game.cpp
+
+$(BIN)GameStateManager.o: $(SRC)GameStateManager.cpp $(SRC)GameStateManager.h
+	$(CC) $(CFLAGS) -o $(BIN)GameStateManager.o $(SRC)GameStateManager.cpp
+
+$(BIN)Level.o: $(SRC)Level.cpp $(SRC)State.h
+	$(CC) $(CFLAGS) -o $(BIN)Level.o $(SRC)Level.cpp
+
+
 clean:
-	rm -rf $(OBJECTS) $(BIN)
+	rm -rf $(OBJECTS) $(EXE)

@@ -18,7 +18,7 @@ GameStateManager::GameStateManager()
   Next_ = Level;
 }
 
-GameStateManager::Update()
+void GameStateManager::Update()
 {
   switch (Next_)
   {

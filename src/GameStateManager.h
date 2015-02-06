@@ -6,7 +6,7 @@
     Define the game state manager.
 */
 
-enum STATE { Level, Restart, Quit };
+enum STATE_LIST { Level, Restart, Quit };
 
 /*!
   \class GameStateManager
@@ -17,12 +17,14 @@ enum STATE { Level, Restart, Quit };
 class GameStateManager
 {
   public:
-    GameStateManager(int FrameRate);
+    GameStateManager();
     ~GameStateManager();
+    
+    void Update();
   
   private:
     /* Pervious, current, and next states */
-    enum STATE Previous_;
-    enum STATE Current_;
-    enum STATE Next_;
+    enum STATE_LIST Previous_;
+    enum STATE_LIST Current_;
+    enum STATE_LIST Next_;
 };
