@@ -1,4 +1,4 @@
-CC=g++
+CC=clang++
 BIN=bin/
 SRC=src/
 CFLAGS=-Wall -Wextra -Werror -ansi -pedantic -O -c

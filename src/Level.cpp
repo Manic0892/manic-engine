@@ -13,8 +13,3 @@ void State::Load()
 {
   std::cout << "Level Load" << std::endl;
 }
-
-void State::Load()
-{
-  std::cout << "Level Load" << std::endl;
-}
