@@ -10,6 +10,8 @@
 #include <getopt.h>
 #include <stdlib.h>
 
+namespace ME = Manic_Engine;
+
 int main(int argc, char **argv)
 {
   int framerate = 60;
@@ -25,7 +27,7 @@ int main(int argc, char **argv)
      }
   }
   
-  Game gameObject(framerate);
+  ME::Game gameObject(framerate);
   
   return gameObject.Run();
 }

@@ -6,7 +6,12 @@
     Define the game state manager.
 */
 
-enum STATE_LIST { Level, Restart, Quit };
+#include "State.h"
+
+namespace Manic_Engine
+{
+
+enum STATE_LIST { Level_State, Restart_State, Quit_State };
 
 /*!
   \class GameStateManager
@@ -24,7 +29,11 @@ class GameStateManager
   
   private:
     /* Pervious, current, and next states */
-    enum STATE_LIST Previous_;
-    enum STATE_LIST Current_;
-    enum STATE_LIST Next_;
+    enum STATE_LIST Previous_State_;
+    enum STATE_LIST Current_State_;
+    enum STATE_LIST Next_State_;
+    
+    State *pState_;
 };
+
+} // namespace Manic_Engine

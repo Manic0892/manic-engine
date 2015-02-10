@@ -10,6 +10,9 @@
 #include "Game.h"             // Game
 #include "GameStateManager.h" // GameStateManager
 
+namespace Manic_Engine
+{
+
 /*!
   Creates a new game object.
   
@@ -37,3 +40,5 @@ int Game::Run()
   std::cout << "Hello, world!  Framerate set to: " << FrameRate_ << std::endl;
   return 0;
 }
+
+} // namespace Manic_Engine

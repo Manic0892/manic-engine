@@ -6,6 +6,9 @@
     Define the main Game object.
 */
 
+namespace Manic_Engine
+{
+
 /*!
   \class Game
   \brief  
@@ -22,3 +25,5 @@ class Game
   private:
     int FrameRate_;
 };
+
+} // namespace Manic_Engine

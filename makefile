@@ -2,7 +2,7 @@ CC=clang++
 BIN=bin/
 SRC=src/
 CFLAGS=-Wall -Wextra -Werror -ansi -pedantic -O -c
-OBJECTS=$(BIN)main.o $(BIN)Game.o $(BIN)GameStateManager.o $(BIN)Level.o
+OBJECTS=$(BIN)main.o $(BIN)Game.o $(BIN)GameStateManager.o $(BIN)Level.o $(BIN)State.o
 EXE=$(BIN)me
 
 all: $(OBJECTS)
@@ -17,8 +17,11 @@ $(BIN)Game.o: $(SRC)Game.cpp $(SRC)Game.h $(SRC)GameStateManager.h
 $(BIN)GameStateManager.o: $(SRC)GameStateManager.cpp $(SRC)GameStateManager.h
 	$(CC) $(CFLAGS) -o $(BIN)GameStateManager.o $(SRC)GameStateManager.cpp
 
-$(BIN)Level.o: $(SRC)Level.cpp $(SRC)State.h
+$(BIN)Level.o: $(SRC)Level.h $(SRC)Level.cpp $(SRC)State.h
 	$(CC) $(CFLAGS) -o $(BIN)Level.o $(SRC)Level.cpp
+
+$(BIN)State.o: $(SRC)State.cpp $(SRC)State.h
+	$(CC) $(CFLAGS) -o $(BIN)State.o $(SRC)State.cpp
 
 
 clean:
