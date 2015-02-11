@@ -6,6 +6,8 @@
     Define the main Game object.
 */
 
+#include "GameStateManager.h"
+
 namespace Manic_Engine
 {
 
@@ -24,6 +26,7 @@ class Game
   
   private:
     int FrameRate_;
+    GameStateManager *GSM_;
 };
 
 } // namespace Manic_Engine

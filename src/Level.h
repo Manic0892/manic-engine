@@ -11,11 +11,23 @@
 namespace Manic_Engine
 {
 
-namespace States
+namespace Level_Functions
 {
   
-  State *Level;
+  void Load();
+  void Init();
+  void Update();
+  void Draw();
+  void Free();
+  void Unload();
   
-} // namespace States
+} // namespace Level_Functions
+
+//namespace States
+//{
+//  
+//  State *Level;
+//  
+//} // namespace States
 
 } // namespace Manic_Engine

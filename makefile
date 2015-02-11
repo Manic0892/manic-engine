@@ -1,7 +1,7 @@
 CC=clang++
 BIN=bin/
 SRC=src/
-CFLAGS=-Wall -Wextra -Werror -ansi -pedantic -O -c
+CFLAGS=-Wall -Wextra -Werror -ansi -pedantic -O -c -fno-exceptions
 OBJECTS=$(BIN)main.o $(BIN)Game.o $(BIN)GameStateManager.o $(BIN)Level.o $(BIN)State.o
 EXE=$(BIN)me
 

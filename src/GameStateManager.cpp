@@ -12,6 +12,20 @@
 
 namespace Manic_Engine
 {
+  
+namespace States
+{
+  State *Level;
+  void CreateStateObjects()
+  {
+    Level = new State(&(Level_Functions::Load),
+                      &(Level_Functions::Init),
+                      &(Level_Functions::Update),
+                      &(Level_Functions::Draw),
+                      &(Level_Functions::Free),
+                      &(Level_Functions::Unload));
+  }
+}
 
 /*!
   Creates a new game state manager.
@@ -21,6 +35,8 @@ GameStateManager::GameStateManager()
   Previous_State_ = Level_State;
   Current_State_ = Level_State;
   Next_State_ = Level_State;
+  
+  States::CreateStateObjects();
 }
 
 void GameStateManager::Update()

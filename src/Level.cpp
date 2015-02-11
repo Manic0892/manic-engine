@@ -6,7 +6,6 @@
     Implement the main game state manager.
 */
 
-#include "State.h"
 #include "Level.h"
 #include <iostream>
 
@@ -44,20 +43,6 @@ namespace Level_Functions
   {
     std::cout << "Level Unload" << std::endl;
   }
-} // namespace Level
-
-//namespace States
-//{
-  void FunctionShit()
-  {
-    // Create the new Level state.
-    States::Level = new State(&(Level_Functions::Load),
-                              &(Level_Functions::Init),
-                              &(Level_Functions::Update),
-                              &(Level_Functions::Draw),
-                              &(Level_Functions::Free),
-                              &(Level_Functions::Unload));
-  }
-//} // namespace States
+} // namespace Level_Functions
 
 } // namespace Manic_Engine

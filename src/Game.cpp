@@ -22,6 +22,8 @@ namespace Manic_Engine
 Game::Game(int FrameRate)
 {
   FrameRate_ = FrameRate;
+  
+  GSM_ = new GameStateManager();
 }
 
 Game::~Game()
@@ -38,6 +40,16 @@ Game::~Game()
 int Game::Run()
 {
   std::cout << "Hello, world!  Framerate set to: " << FrameRate_ << std::endl;
+  
+  while (true)
+  {
+    std::cout << "Here" << std::endl;
+    
+    GSM_->pState_->Load();
+    
+    std::cout << "Here" << std::endl;
+  }
+  
   return 0;
 }
 
