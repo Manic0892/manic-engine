@@ -7,6 +7,7 @@
 */
 
 #include "State.h"
+#include <iostream>
 
 namespace Manic_Engine
 {
@@ -28,12 +29,37 @@ State::State(void (*pLoad)(void),
              void (*pFree)(void),
              void (*pUnload)(void))
 {
-  Load = pLoad;
-  Init = pInit;
-  Update = pUpdate;
-  Draw = pDraw;
-  Free = pFree;
-  Unload = pUnload;
+  pLoad_ = pLoad;
+  pInit_ = pInit;
+  pUpdate_ = pUpdate;
+  pDraw_ = pDraw;
+  pFree_ = pFree;
+  pUnload_ = pUnload;
+}
+
+void State::Load()
+{
+  pLoad_();
+}
+void State::Init()
+{
+  pInit_();
+}
+void State::Update()
+{
+  pUpdate_();
+}
+void State::Draw()
+{
+  pDraw_();
+}
+void State::Free()
+{
+  pFree_();
+}
+void State::Unload()
+{
+  pUnload_();
 }
 
 } // namespace Manic_Engine

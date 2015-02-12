@@ -28,14 +28,22 @@ class State
           void (*pFree)(void),
           void (*pUnload)(void));
     ~State();
-
+    
+    void Load();
+    void Init();
+    void Update();
+    void Draw();
+    void Free();
+    void Unload();
+  
+  private:
     //Game loop function pointers
-    void (*Load)(void);
-    void (*Init)(void);
-    void (*Update)(void);
-    void (*Draw)(void);
-    void (*Free)(void);
-    void (*Unload)(void);
+    void (*pLoad_)(void);
+    void (*pInit_)(void);
+    void (*pUpdate_)(void);
+    void (*pDraw_)(void);
+    void (*pFree_)(void);
+    void (*pUnload_)(void);
 };
 
 } // namespace Manic_Engine

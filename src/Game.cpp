@@ -41,13 +41,11 @@ int Game::Run()
 {
   std::cout << "Hello, world!  Framerate set to: " << FrameRate_ << std::endl;
   
+  GSM_->Update();
+  
   while (true)
-  {
-    std::cout << "Here" << std::endl;
-    
+  { 
     GSM_->pState_->Load();
-    
-    std::cout << "Here" << std::endl;
   }
   
   return 0;
