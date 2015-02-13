@@ -43,9 +43,40 @@ int Game::Run()
   
   GSM_->Update();
   
-  while (true)
-  { 
-    GSM_->pState_->Load();
+  while (GSM_->Current_ != QUIT)
+  {
+    if (GSM_->Current_ == RESTART)
+    {
+      GSM_->Current_ = GSM_->Previous_;
+      GSM_->Next_ = GSM_->Previous_;
+    }
+    else
+    {
+      GSM_->Update();
+      GSM_->State_->Load();
+    }
+    
+    GSM_->State_->Init();
+    
+    while (GSM_->Next_ == GSM_->Current_)
+    {
+      GSM_->State_->Update();
+      GSM_->State_->Draw();
+    }
+    
+    GSM_->State_->Free();
+    
+    if (GSM_->Next_ == RESTART)
+    {
+      GSM_->Previous_ = GSM_->Current_;
+      GSM_->Current_ = GSM_->Next_;
+    }
+    else
+      GSM_->State_->Unload();
+    
+    // Update state indicators
+    GSM_->Previous_ = GSM_->Current_;
+    GSM_->Current_ = GSM_->Next_;
   }
   
   return 0;

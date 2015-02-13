@@ -32,19 +32,19 @@ namespace States
 */
 GameStateManager::GameStateManager()
 {
-  Previous_State_ = Level_State;
-  Current_State_ = Level_State;
-  Next_State_ = Level_State;
+  Previous_ = LEVEL;
+  Current_ = LEVEL;
+  Next_ = LEVEL;
   
   States::CreateStateObjects();
 }
 
 void GameStateManager::Update()
 {
-  switch (Next_State_)
+  switch (Next_)
   {
-    case Level_State:
-      pState_ = States::Level;
+    case LEVEL:
+      State_ = States::Level;
       break;
     default:
       break;

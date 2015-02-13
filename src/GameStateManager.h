@@ -14,7 +14,7 @@
 namespace Manic_Engine
 {
 
-enum STATE_LIST { Level_State, Restart_State, Quit_State };
+enum STATE_LIST { LEVEL, RESTART, QUIT };
 
 /*!
   \class GameStateManager
@@ -30,13 +30,12 @@ class GameStateManager
     
     void Update();
     
-    State *pState_;
-  
-  private:
+    State *State_;
+    
     /* Pervious, current, and next states */
-    enum STATE_LIST Previous_State_;
-    enum STATE_LIST Current_State_;
-    enum STATE_LIST Next_State_;
+    STATE_LIST Previous_;
+    STATE_LIST Current_;
+    STATE_LIST Next_;
 };
 
 } // namespace Manic_Engine
