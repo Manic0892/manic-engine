@@ -1,8 +1,8 @@
 CC=clang++
 BIN=bin/
 SRC=src/
-CFLAGS=-Wall -Wextra -Werror -ansi -pedantic -O -c -fno-exceptions
-OBJECTS=$(BIN)main.o $(BIN)Game.o $(BIN)GameStateManager.o $(BIN)Level.o $(BIN)State.o
+CFLAGS=-Wall -Wextra -Werror -ansi -pedantic -O -c -fno-exceptions -std=c++11
+OBJECTS=$(BIN)main.o $(BIN)Game.o $(BIN)GameStateManager.o $(BIN)Level.o $(BIN)State.o $(BIN)FrameRateController.o
 EXE=$(BIN)me
 
 all: $(OBJECTS)
@@ -23,6 +23,9 @@ $(BIN)Level.o: $(SRC)Level.h $(SRC)Level.cpp $(SRC)State.h
 $(BIN)State.o: $(SRC)State.cpp $(SRC)State.h
 	$(CC) $(CFLAGS) -o $(BIN)State.o $(SRC)State.cpp
 
+$(BIN)FrameRateController.o: $(SRC)FrameRateController.cpp $(SRC)FrameRateController.h
+	$(CC) $(CFLAGS) -o $(BIN)FrameRateController.o $(SRC)FrameRateController.cpp
+	
 
 clean:
 	rm -rf $(OBJECTS) $(EXE)
