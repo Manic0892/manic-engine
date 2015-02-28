@@ -3,6 +3,7 @@
 #include "FrameRateController.h"
 #include <chrono>
 #include <thread>
+#include <iostream>
 
 namespace Manic_Engine
 {
@@ -10,9 +11,9 @@ namespace Manic_Engine
 FrameRateController::FrameRateController(int FrameRate)
 {
   FrameRate_ = FrameRate;
-  FrameTime_ = double(1 / FrameRate_);
+  FrameTime_ = ms( 1000 / FrameRate_ );
   
-  LastFrameTime_ = 0;
+  LastFrameTime_ = ms(0);
 }
 
 void FrameRateController::FrameStart()
@@ -22,30 +23,29 @@ void FrameRateController::FrameStart()
 
 void FrameRateController::FrameEnd()
 {
-  using std::chrono::duration;
-  using std::chrono::duration_cast;
-  
-   EndTime_ = Time::now();
-
-  duration<double> currentFrameTime = duration_cast<duration<double>>(EndTime_ - StartTime_);
+  ms currentFrameTime = ms(0);
   
   while (currentFrameTime < FrameTime_)
   {
     EndTime_ = Time::now();
-
-    currentFrameTime = duration_cast<duration<double>>(EndTime_ - StartTime_);
     
-    duration<double> sleepTime = FrameTime_ - currentFrameTime.count();
+    currentFrameTime = std::chrono::duration_cast<ms>(EndTime_ - StartTime_);
     
-    std::this_thread::sleep_for(sleepTime);
+    std::this_thread::sleep_for(currentFrameTime);
   }
   
   LastFrameTime_ = currentFrameTime;
+  TotalTime_ += currentFrameTime.count();
+}
+
+double FrameRateController::GetFrameTime()
+{
+  return FrameTime_.count();
 }
 
 double FrameRateController::GetLastFrameTime()
 {
-  return LastFrameTime_;
+  return LastFrameTime_.count();
 }
 
 } // Manic_Engine

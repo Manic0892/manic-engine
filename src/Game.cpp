@@ -24,6 +24,7 @@ Game::Game(int FrameRate)
   FrameRate_ = FrameRate;
   
   GSM_ = new GameStateManager();
+  FRC_ = new FrameRateController(FrameRate);
 }
 
 Game::~Game()
@@ -60,8 +61,12 @@ int Game::Run()
     
     while (GSM_->Next_ == GSM_->Current_)
     {
+      FRC_->FrameStart();
+      
       GSM_->State_->Update();
       GSM_->State_->Draw();
+      
+      FRC_->FrameEnd();
     }
     
     GSM_->State_->Free();

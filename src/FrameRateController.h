@@ -14,7 +14,6 @@
 typedef std::chrono::high_resolution_clock Time;
 typedef std::chrono::high_resolution_clock::time_point TimePoint;
 typedef std::chrono::milliseconds ms;
-typedef std::chrono::duration<double> sec;
 
 namespace Manic_Engine
 {
@@ -28,14 +27,15 @@ class FrameRateController
     void FrameEnd();
     
     double GetLastFrameTime();
+    double GetFrameTime();
   
   private:
     int FrameRate_;
-    double FrameTime_;
+    ms FrameTime_;
     TimePoint StartTime_;
     TimePoint EndTime_;
-    int TotalTime_;
-    double LastFrameTime_;
+    double TotalTime_;
+    ms LastFrameTime_;
 };
 
 } // Manic_Engine

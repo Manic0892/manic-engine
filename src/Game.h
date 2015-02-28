@@ -7,6 +7,7 @@
 */
 
 #include "GameStateManager.h"
+#include "FrameRateController.h"
 
 namespace Manic_Engine
 {
@@ -27,6 +28,7 @@ class Game
   private:
     int FrameRate_;
     GameStateManager *GSM_;
+    FrameRateController *FRC_;
 };
 
 } // namespace Manic_Engine
