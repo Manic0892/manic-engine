@@ -28,4 +28,4 @@ $(BIN)FrameRateController.o: $(SRC)FrameRateController.cpp $(SRC)FrameRateContro
 	
 
 clean:
-	rm -rf $(OBJECTS) $(EXE)
+	rm -rf $(OBJECTS) $(EXE) docs/*
