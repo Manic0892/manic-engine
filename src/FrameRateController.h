@@ -9,7 +9,12 @@
 #ifndef FRAMERATECONTROLLER_H
 #define FRAMERATECONTROLLER_H
 
-#include <ctime>
+#include <chrono>
+
+typedef std::chrono::high_resolution_clock Time;
+typedef std::chrono::high_resolution_clock::time_point TimePoint;
+typedef std::chrono::milliseconds ms;
+typedef std::chrono::duration<double> sec;
 
 namespace Manic_Engine
 {
@@ -27,11 +32,11 @@ class FrameRateController
   private:
     int FrameRate_;
     double FrameTime_;
-    clock_t StartTime_;
-    clock_t EndTime_;
-    double TotalTime_;
-    double LastFrameTotalTime_;
-}
+    TimePoint StartTime_;
+    TimePoint EndTime_;
+    int TotalTime_;
+    double LastFrameTime_;
+};
 
 } // Manic_Engine
 

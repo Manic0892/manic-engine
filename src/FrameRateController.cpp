@@ -12,31 +12,40 @@ FrameRateController::FrameRateController(int FrameRate)
   FrameRate_ = FrameRate;
   FrameTime_ = double(1 / FrameRate_);
   
-  LastFrameTotalTime_ = 0;
+  LastFrameTime_ = 0;
 }
 
 void FrameRateController::FrameStart()
 {
-  StartTime_ = clock();
+  StartTime_ = Time::now();
 }
 
 void FrameRateController::FrameEnd()
 {
-  TotalTime_ = 0;
+  using std::chrono::duration;
+  using std::chrono::duration_cast;
   
-  while (TotalTime_ < FrameTime_)
-  {
-    EndTime_ = clock();
+   EndTime_ = Time::now();
 
-    TotalTime_ = double((EndTime_ - StartTime_) * 1000 / CLOCKS_PER_SEC);
+  duration<double> currentFrameTime = duration_cast<duration<double>>(EndTime_ - StartTime_);
+  
+  while (currentFrameTime < FrameTime_)
+  {
+    EndTime_ = Time::now();
+
+    currentFrameTime = duration_cast<duration<double>>(EndTime_ - StartTime_);
     
-    std::this_thread::sleep_for(std::chrono::milliseconds(TotalTime_));
+    duration<double> sleepTime = FrameTime_ - currentFrameTime.count();
+    
+    std::this_thread::sleep_for(sleepTime);
   }
+  
+  LastFrameTime_ = currentFrameTime;
 }
 
-double GetLastFrameTotalTime()
+double FrameRateController::GetLastFrameTime()
 {
-  return LastFrameTotalTime_;
+  return LastFrameTime_;
 }
 
 } // Manic_Engine
