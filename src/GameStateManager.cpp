@@ -12,18 +12,13 @@
 
 namespace Manic_Engine
 {
-  
+
 namespace States
 {
-  State *Level;
+  State *level;
   void CreateStateObjects()
   {
-    Level = new State(&(Level_Functions::Load),
-                      &(Level_Functions::Init),
-                      &(Level_Functions::Update),
-                      &(Level_Functions::Draw),
-                      &(Level_Functions::Free),
-                      &(Level_Functions::Unload));
+    level = new Level();
   }
 }
 
@@ -35,7 +30,7 @@ GameStateManager::GameStateManager()
   Previous_ = LEVEL;
   Current_ = LEVEL;
   Next_ = LEVEL;
-  
+
   States::CreateStateObjects();
 }
 
@@ -44,7 +39,7 @@ void GameStateManager::Update()
   switch (Next_)
   {
     case LEVEL:
-      State_ = States::Level;
+      State_ = States::level;
       break;
     default:
       break;
@@ -53,7 +48,7 @@ void GameStateManager::Update()
 
 GameStateManager::~GameStateManager()
 {
-  
+
 }
 
 } // namespace Manic_Engine
