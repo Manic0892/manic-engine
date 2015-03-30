@@ -14,7 +14,22 @@ namespace Manic_Engine
 
 State::State()
 {
-  //No defined behavior yet.
+  Name = "";
+}
+
+State::State(std::string name) : Name(name)
+{
+
+}
+
+std::string State::GetName() const
+{
+  return Name;
+}
+
+void State::SetName(std::string name)
+{
+  Name = name;
 }
 
 } // namespace Manic_Engine

@@ -6,6 +6,8 @@
     Define the layout of a state.
 */
 
+#include <string>
+
 #ifndef STATE_H
 #define STATE_H
 
@@ -21,6 +23,7 @@ class State
 {
   public:
     State();
+    State(std::string name);
     ~State();
 
     virtual void Load()   = 0;
@@ -29,6 +32,12 @@ class State
     virtual void Draw()   = 0;
     virtual void Free()   = 0;
     virtual void Unload() = 0;
+
+    std::string GetName() const;
+    void SetName(const std::string name);
+
+  private:
+    std::string Name;
 };
 
 } // namespace Manic_Engine

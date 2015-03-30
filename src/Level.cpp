@@ -15,6 +15,12 @@ namespace Manic_Engine
 namespace States
 {
 
+Level::Level()
+{
+  SetName("Level");
+  std::cout << "Constructed " << GetName() << std::endl;
+}
+
 void Level::Load()
 {
   std::cout << "Level Load" << std::endl;

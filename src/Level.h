@@ -17,13 +17,13 @@ namespace States
 class Level : public State
 {
   public:
+    Level();
     void Load();
     void Init();
     void Update();
     void Draw();
     void Free();
     void Unload();
-
 };
 
 } // namespace States
