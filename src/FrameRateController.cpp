@@ -22,39 +22,64 @@ namespace ManicEngine
 */
 FrameRateController::FrameRateController(int framerate)
 {
-  FrameRate = framerate;
-  FrameTime = ms( 1000 / FrameRate );
+  FrameRate = framerate;              // Set the FrameRate
+  FrameTime = ms( 1000 / FrameRate ); // Calculate the frame time in ms
 
-  LastFrameTime = ms(0);
+  LastFrameTime = ms(0);              // Initialize the last frame time
 }
 
+/*!
+  \brief
+    Record the time for a new frame.
+*/
 void FrameRateController::FrameStart()
 {
   StartTime = Time::now();
 }
 
+/*!
+  \brief
+    Record a frame end.
+*/
 void FrameRateController::FrameEnd()
 {
-  ms currentFrameTime = ms(0);
+  ms currentFrameTime = ms(0);          // Set the current time the frame's been
+                                        // running to zero.
 
   while (currentFrameTime < FrameTime)
   {
-    EndTime = Time::now();
+    EndTime = Time::now();              // Record the ending time for the frame.
 
+    // Recalculate the current time the frame's been running.
     currentFrameTime = std::chrono::duration_cast<ms>(EndTime - StartTime);
 
-    std::this_thread::sleep_for(currentFrameTime);
+    // Sleep for the remaining amount of time
+    std::this_thread::sleep_for(FrameTime - currentFrameTime);
   }
 
-  LastFrameTime = currentFrameTime;
-  TotalTime += currentFrameTime.count();
+  LastFrameTime = currentFrameTime; // Set the LastFrameTime for later reference
+  TotalTime += currentFrameTime.count(); // Increment TotalTime count
 }
 
+/*!
+  \brief
+    Get the frame time.
+
+  \return
+    A double representing the frame time.
+*/
 double FrameRateController::GetFrameTime()
 {
   return FrameTime.count();
 }
 
+/*!
+  \brief
+    Get the most recent actual frame time.
+
+  \return
+    A double representing the most recent frame time.
+*/
 double FrameRateController::GetLastFrameTime()
 {
   return LastFrameTime.count();

@@ -14,7 +14,7 @@ namespace Manic_Engine
 
 /*!
   \class Game
-  \brief  
+  \brief
     The game class implements a game object which loads all other modules and
     handles the main running of the game.
 */
@@ -24,11 +24,11 @@ class Game
     Game(int FrameRate);
     ~Game();
     int Run();
-  
+
   private:
     int FrameRate_;
     GameStateManager *GSM_;
-    FrameRateController *FRC_;
+    ManicEngine::FrameRateController *FRC_;
 };
 
 } // namespace Manic_Engine
