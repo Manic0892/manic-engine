@@ -19,17 +19,22 @@ namespace Manic_Engine
   \param FrameRate
     The framerate in FPS to set the game framerate to.
 */
-Game::Game(int FrameRate)
+Game::Game(int framerate)
 {
-  FrameRate_ = FrameRate;
+  FrameRate = framerate;
 
-  GSM_ = new GameStateManager();
-  FRC_ = new ManicEngine::FrameRateController(FrameRate);
+  GSM = new GameStateManager();
+  FRC = new Manic_Engine::FrameRateController(FrameRate);
 }
 
+/*!
+  Destroys a game object.  Cleans up the GameStateManager and
+  FrameRateController instances.
+*/
 Game::~Game()
 {
-
+  delete GSM;
+  delete FRC;
 }
 
 /*!
@@ -40,48 +45,49 @@ Game::~Game()
 */
 int Game::Run()
 {
-  std::cout << "Hello, world!  Framerate set to: " << FrameRate_ << std::endl;
+  std::cout << "Hello, world!  Framerate set to: " << FrameRate << std::endl;
 
-  GSM_->Update();
+  GSM->Update(); // Update the game state manager.
 
-  while (GSM_->Current_ != QUIT)
+  // Basic game loop
+  while (GSM->Current_ != QUIT)
   {
-    if (GSM_->Current_ == RESTART)
+    if (GSM->Current_ == RESTART)
     {
-      GSM_->Current_ = GSM_->Previous_;
-      GSM_->Next_ = GSM_->Previous_;
+      GSM->Current_ = GSM->Previous_;
+      GSM->Next_ = GSM->Previous_;
     }
     else
     {
-      GSM_->Update();
-      GSM_->State_->Load();
+      GSM->Update();
+      GSM->State_->Load();
     }
 
-    GSM_->State_->Init();
+    GSM->State_->Init();
 
-    while (GSM_->Next_ == GSM_->Current_)
+    while (GSM->Next_ == GSM->Current_)
     {
-      FRC_->FrameStart();
+      FRC->FrameStart();
 
-      GSM_->State_->Update();
-      GSM_->State_->Draw();
+      GSM->State_->Update();
+      GSM->State_->Draw();
 
-      FRC_->FrameEnd();
+      FRC->FrameEnd();
     }
 
-    GSM_->State_->Free();
+    GSM->State_->Free();
 
-    if (GSM_->Next_ == RESTART)
+    if (GSM->Next_ == RESTART)
     {
-      GSM_->Previous_ = GSM_->Current_;
-      GSM_->Current_ = GSM_->Next_;
+      GSM->Previous_ = GSM->Current_;
+      GSM->Current_ = GSM->Next_;
     }
     else
-      GSM_->State_->Unload();
+      GSM->State_->Unload();
 
     // Update state indicators
-    GSM_->Previous_ = GSM_->Current_;
-    GSM_->Current_ = GSM_->Next_;
+    GSM->Previous_ = GSM->Current_;
+    GSM->Current_ = GSM->Next_;
   }
 
   return 0;

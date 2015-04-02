@@ -1,16 +1,16 @@
 /*!
-  \file   Game.cpp
+  \file   FrameRateController.cpp
   \author Sean McGeer
-  \date   1/29/15
+  \date   2/24/15
   \brief
     Implements a frame rate controller.
 */
 
 #include "FrameRateController.h"
-#include <chrono>
-#include <thread>
+#include <chrono>                 // Time functions
+#include <thread>                 // sleep_for
 
-namespace ManicEngine
+namespace Manic_Engine
 {
 
 /*!
