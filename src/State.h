@@ -24,7 +24,7 @@ class State
   public:
     State();
     State(std::string name);
-    ~State();
+    virtual ~State();
 
     virtual void Load()   = 0;
     virtual void Init()   = 0;

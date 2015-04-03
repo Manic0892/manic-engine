@@ -18,6 +18,8 @@ class Level : public State
 {
   public:
     Level();
+    ~Level();
+    
     void Load();
     void Init();
     void Update();

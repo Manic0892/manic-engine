@@ -24,7 +24,7 @@ Game::Game(int framerate)
   FrameRate = framerate;
 
   GSM = new GameStateManager();
-  FRC = new Manic_Engine::FrameRateController(FrameRate);
+  FRC = new FrameRateController(FrameRate);
 }
 
 /*!
@@ -50,47 +50,47 @@ int Game::Run()
   GSM->Update(); // Update the game state manager.
 
   // Basic game loop
-  while (GSM->Current_ != QUIT)
+  while (GSM->GetCurrentState() != gsQuit)
   {
-    if (GSM->Current_ == RESTART)
+    if (GSM->GetCurrentState() == gsRestart)
     {
-      GSM->Current_ = GSM->Previous_;
-      GSM->Next_ = GSM->Previous_;
+      GSM->SetCurrentState(GSM->GetPreviousState());
+      GSM->SetNextState(GSM->GetPreviousState());
     }
     else
     {
       GSM->Update();
-      GSM->State_->Load();
+      GSM->Running->Load();
     }
 
-    GSM->State_->Init();
+    GSM->Running->Init();
 
-    while (GSM->Next_ == GSM->Current_)
+    while (GSM->GetNextState() == GSM->GetCurrentState())
     {
       FRC->FrameStart();
 
-      GSM->State_->Update();
-      GSM->State_->Draw();
+      GSM->Running->Update();
+      GSM->Running->Draw();
 
       FRC->FrameEnd();
     }
 
-    GSM->State_->Free();
+    GSM->Running->Free();
 
-    if (GSM->Next_ == RESTART)
+    if (GSM->GetNextState() == gsRestart)
     {
-      GSM->Previous_ = GSM->Current_;
-      GSM->Current_ = GSM->Next_;
+      GSM->SetPreviousState(GSM->GetCurrentState());
+      GSM->SetCurrentState(GSM->GetNextState());
     }
     else
-      GSM->State_->Unload();
+      GSM->Running->Unload();
 
     // Update state indicators
-    GSM->Previous_ = GSM->Current_;
-    GSM->Current_ = GSM->Next_;
+    GSM->SetPreviousState(GSM->GetCurrentState());
+    GSM->SetCurrentState(GSM->GetNextState());
   }
 
   return 0;
 }
 
-} // namespace Manic_Engine
+} // Manic_Engine

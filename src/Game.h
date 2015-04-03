@@ -32,7 +32,7 @@ class Game
     /*! This game's game state manager.     */
     GameStateManager *GSM;
     /*! This game's frame rate controller.  */
-    Manic_Engine::FrameRateController *FRC;
+    FrameRateController *FRC;
 };
 
-} // namespace Manic_Engine
+} // Manic_Engine

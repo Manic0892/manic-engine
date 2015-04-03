@@ -21,6 +21,10 @@ Level::Level()
   std::cout << "Constructed " << GetName() << std::endl;
 }
 
+Level::~Level()
+{
+}
+
 void Level::Load()
 {
   std::cout << "Level Load" << std::endl;

@@ -14,10 +14,11 @@
 namespace Manic_Engine
 {
 
-enum STATE_LIST { LEVEL, RESTART, QUIT };
+enum STATE_LIST { gsLevel, gsRestart, gsQuit };
 
 /*!
   \class GameStateManager
+  
   \brief  
     The game state manager handles the switching of states and contains pointers
     to the currently loaded level for use in the game loop.
@@ -30,14 +31,25 @@ class GameStateManager
     
     void Update();
     
-    State *State_;
+    STATE_LIST GetPreviousState() const;
+    STATE_LIST GetCurrentState() const;
+    STATE_LIST GetNextState() const;
     
-    /* Pervious, current, and next states */
-    STATE_LIST Previous_;
-    STATE_LIST Current_;
-    STATE_LIST Next_;
+    void SetPreviousState(STATE_LIST state);
+    void SetCurrentState(STATE_LIST state);
+    void SetNextState(STATE_LIST state);
+    
+    State *Running;
+    
+  private:
+    void SwitchToState(State *state);
+    
+    /* Previous, current, and next states */
+    STATE_LIST Previous;
+    STATE_LIST Current;
+    STATE_LIST Next;
 };
 
-} // namespace Manic_Engine
+} // Manic_Engine
 
 #endif

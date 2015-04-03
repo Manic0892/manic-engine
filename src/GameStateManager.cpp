@@ -13,42 +13,68 @@
 namespace Manic_Engine
 {
 
-namespace States
-{
-  State *level;
-  void CreateStateObjects()
-  {
-    level = new Level();
-  }
-}
-
 /*!
   Creates a new game state manager.
 */
 GameStateManager::GameStateManager()
 {
-  Previous_ = LEVEL;
-  Current_ = LEVEL;
-  Next_ = LEVEL;
-
-  States::CreateStateObjects();
+  Previous = gsLevel;
+  Current = gsLevel;
+  Next = gsLevel;
 }
 
+/*!
+  Default destructor.
+*/
+GameStateManager::~GameStateManager()
+{
+  delete Running;
+}
+
+/*!
+  Updates the game state manager.
+*/
 void GameStateManager::Update()
 {
-  switch (Next_)
+  switch (Next)
   {
-    case LEVEL:
-      State_ = States::level;
+    case gsLevel:
+      delete Running;
+      Running = new States::Level();
       break;
     default:
       break;
   }
 }
 
-GameStateManager::~GameStateManager()
+STATE_LIST GameStateManager::GetPreviousState() const
 {
-
+  return Previous;
 }
 
-} // namespace Manic_Engine
+STATE_LIST GameStateManager::GetCurrentState() const
+{
+  return Current;
+}
+
+STATE_LIST GameStateManager::GetNextState() const
+{
+  return Next;
+}
+
+void GameStateManager::SetPreviousState(STATE_LIST state)
+{
+  Previous = state;
+}
+
+void GameStateManager::SetCurrentState(STATE_LIST state)
+{
+  Current = state;
+}
+
+void GameStateManager::SetNextState(STATE_LIST state)
+{
+  Next = state;
+}
+
+} // Manic_Engine

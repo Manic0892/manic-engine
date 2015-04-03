@@ -22,6 +22,11 @@ State::State(std::string name) : Name(name)
 
 }
 
+State::~State()
+{
+
+}
+
 std::string State::GetName() const
 {
   return Name;
