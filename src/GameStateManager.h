@@ -39,14 +39,17 @@ class GameStateManager
     void SetCurrentState(STATE_LIST state);
     void SetNextState(STATE_LIST state);
     
+    /*! A pointer to the currently running state object. */
     State *Running;
     
   private:
     void SwitchToState(State *state);
     
-    /* Previous, current, and next states */
+    /*! Previous state. */
     STATE_LIST Previous;
+    /*! Current state.  */
     STATE_LIST Current;
+    /*! Next state.     */
     STATE_LIST Next;
 };
 

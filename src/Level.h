@@ -14,6 +14,12 @@ namespace Manic_Engine
 namespace States
 {
 
+/*!
+  \class Level
+  
+  \brief
+    A definition of a basic level.  Inherits from State.
+*/
 class Level : public State
 {
   public:

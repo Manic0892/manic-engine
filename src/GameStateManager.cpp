@@ -47,31 +47,67 @@ void GameStateManager::Update()
   }
 }
 
+/*!
+  Get the previous state.
+  
+  \return
+    A STATE_LIST denoting the previous state.
+*/
 STATE_LIST GameStateManager::GetPreviousState() const
 {
   return Previous;
 }
 
+/*!
+  Get the current state.
+  
+  \return
+    A STATE_LIST denoting the current state.
+*/
 STATE_LIST GameStateManager::GetCurrentState() const
 {
   return Current;
 }
 
+/*!
+  Get the next state.
+  
+  \return
+    A STATE_LIST denoting the next state.
+*/
 STATE_LIST GameStateManager::GetNextState() const
 {
   return Next;
 }
 
+/*!
+  Set the previous state.
+  
+  \param
+    The state to set as the new previous state.
+*/
 void GameStateManager::SetPreviousState(STATE_LIST state)
 {
   Previous = state;
 }
 
+/*!
+  Set the current state.
+  
+  \param
+    The state to set as the new current state.
+*/
 void GameStateManager::SetCurrentState(STATE_LIST state)
 {
   Current = state;
 }
 
+/*!
+  Set the next state.
+  
+  \param
+    The state to set as the new next state.
+*/
 void GameStateManager::SetNextState(STATE_LIST state)
 {
   Next = state;
