@@ -37,6 +37,7 @@ class State
     void SetName(const std::string name);
 
   private:
+    /*! The name of this state. */
     std::string Name;
 };
 

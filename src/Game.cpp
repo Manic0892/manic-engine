@@ -16,7 +16,7 @@ namespace Manic_Engine
 /*!
   Creates a new game object.
 
-  \param FrameRate
+  \param framerate
     The framerate in FPS to set the game framerate to.
 */
 Game::Game(int framerate)
