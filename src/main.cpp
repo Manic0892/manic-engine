@@ -16,18 +16,20 @@ int main(int argc, char **argv)
 {
   int framerate = 60;
   int opt;
-  
-  while ((opt = getopt(argc, argv, "f:")) != -1) 
+
+  while ((opt = getopt(argc, argv, "f:")) != -1)
   {
-     switch (opt) 
+     switch (opt)
      {
       case 'f':
         framerate = atoi(optarg);
         break;
      }
   }
-  
+
   ME::Game gameObject(framerate);
-  
-  return gameObject.Run();
+
+  gameObject.Run();
+
+  return 0;
 }

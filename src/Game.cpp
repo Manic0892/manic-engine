@@ -12,7 +12,7 @@
 
 namespace Manic_Engine
 {
-
+Game* Manic;
 /*!
   Creates a new game object.
 
@@ -21,6 +21,7 @@ namespace Manic_Engine
 */
 Game::Game(int framerate)
 {
+  Manic = this;
   FrameRate = framerate;
 
   GSM = new GameStateManager();
@@ -43,11 +44,9 @@ Game::~Game()
   \return
     An integer code to return to the OS.
 */
-int Game::Run()
+void Game::Run()
 {
   std::cout << "Hello, world!  Framerate set to: " << FrameRate << std::endl;
-
-  GSM->Update(); // Update the game state manager.
 
   // Basic game loop
   while (GSM->GetCurrentState() != gsQuit)
@@ -89,8 +88,6 @@ int Game::Run()
     GSM->SetPreviousState(GSM->GetCurrentState());
     GSM->SetCurrentState(GSM->GetNextState());
   }
-
-  return 0;
 }
 
 } // Manic_Engine

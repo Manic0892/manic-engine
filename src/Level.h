@@ -16,7 +16,7 @@ namespace States
 
 /*!
   \class Level
-  
+
   \brief
     A definition of a basic level.  Inherits from State.
 */
@@ -25,13 +25,17 @@ class Level : public State
   public:
     Level();
     ~Level();
-    
+
     void Load();
     void Init();
     void Update();
     void Draw();
     void Free();
     void Unload();
+
+  private:
+    int Health;
+    int Lives;
 };
 
 } // namespace States

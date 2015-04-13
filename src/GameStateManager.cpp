@@ -49,7 +49,7 @@ void GameStateManager::Update()
 
 /*!
   Get the previous state.
-  
+
   \return
     A STATE_LIST denoting the previous state.
 */
@@ -60,7 +60,7 @@ STATE_LIST GameStateManager::GetPreviousState() const
 
 /*!
   Get the current state.
-  
+
   \return
     A STATE_LIST denoting the current state.
 */
@@ -71,7 +71,7 @@ STATE_LIST GameStateManager::GetCurrentState() const
 
 /*!
   Get the next state.
-  
+
   \return
     A STATE_LIST denoting the next state.
 */
@@ -82,7 +82,7 @@ STATE_LIST GameStateManager::GetNextState() const
 
 /*!
   Set the previous state.
-  
+
   \param state
     The state to set as the new previous state.
 */
@@ -93,7 +93,7 @@ void GameStateManager::SetPreviousState(STATE_LIST state)
 
 /*!
   Set the current state.
-  
+
   \param state
     The state to set as the new current state.
 */
@@ -104,7 +104,7 @@ void GameStateManager::SetCurrentState(STATE_LIST state)
 
 /*!
   Set the next state.
-  
+
   \param state
     The state to set as the new next state.
 */

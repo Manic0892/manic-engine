@@ -7,10 +7,13 @@
 */
 
 #include "Level.h"
+#include "Game.h"
 #include <iostream>
 
 namespace Manic_Engine
 {
+
+extern Game* Manic;
 
 namespace States
 {
@@ -36,7 +39,8 @@ Level::~Level()
 */
 void Level::Load()
 {
-  std::cout << "Level Load" << std::endl;
+  Lives = 2;
+  std::cout << "Level Load." << std::endl;
 }
 
 /*!
@@ -44,7 +48,8 @@ void Level::Load()
 */
 void Level::Init()
 {
-  std::cout << "Level Init" << std::endl;
+  Health = 3;
+  std::cout << "Level Init." << std::endl;
 }
 
 /*!
@@ -52,7 +57,18 @@ void Level::Init()
 */
 void Level::Update()
 {
-  std::cout << "Level Update" << std::endl;
+  --Health;
+  std::cout << "Level Update.  Health = " << Health << ", Lives = " << Lives
+    << std::endl;
+
+  if (Health <= 0)
+  {
+    --Lives;
+    if (Lives <= 0)
+      Manic->GSM->SetNextState(gsQuit);
+    else
+      Manic->GSM->SetNextState(gsRestart);
+  }
 }
 
 /*!
