@@ -31,4 +31,4 @@
 docs/
 
 # Binary file directory
-bin/
+bin/*
