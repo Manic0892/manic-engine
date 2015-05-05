@@ -33,6 +33,10 @@ class Component
     /*! The name of this component */
     std::string const Name;
     BITFIELD_COMPONENT const ID;
+
+  private:
+    Component() = delete;
+
 };
 
 }

@@ -34,3 +34,6 @@ docs/
 bin/*
 Debug/*
 Release/*
+
+# Visual Studio bullshit
+*.opensdf

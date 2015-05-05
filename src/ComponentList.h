@@ -4,6 +4,13 @@ namespace Manic_Engine
 namespace Components
 {
 
+enum INDICES_COMPONENT
+{
+  icTransform,
+  icDraw,
+  icLast
+};
+
 enum BITFIELD_COMPONENT
 {
   bcUndefined       = -1,

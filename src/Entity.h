@@ -10,6 +10,7 @@ affecting gameplay.
 
 #include <vector>
 #include "Component.h"
+#include "ComponentList.h"
 
 namespace Manic_Engine
 {
@@ -19,10 +20,12 @@ class Entity
   public:
     Entity();
     ~Entity();
+    int GetComponentsFlag();
+    bool AddComponent(Components::INDICES_COMPONENT index);
   
   protected:
-    std::vector<Component *> Components;
-    BITFIELD_COMPONENT ComponentsFlag;
+    std::vector<Components::Component *> Components;
+    Components::BITFIELD_COMPONENT ComponentsFlag;
 };
 
 }
