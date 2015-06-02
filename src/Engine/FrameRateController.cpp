@@ -1,9 +1,10 @@
 /*!
-  \file   FrameRateController.cpp
-  \author Sean McGeer
-  \date   2/24/15
-  \brief
-    Implements a frame rate controller.
+
+\file   FrameRateController.cpp
+\author Sean McGeer
+\date   2/24/15
+\brief  Implements a frame rate controller.
+
 */
 
 #include "FrameRateController.h"

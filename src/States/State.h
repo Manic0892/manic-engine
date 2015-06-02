@@ -1,9 +1,10 @@
 /*!
-  \file   State.h
-  \author Sean McGeer
-  \date   2/5/15
-  \brief
-    Define the layout of a state.
+
+\file   State.h
+\author Sean McGeer
+\date   2/5/15
+\brief  Define the layout of a state.
+
 */
 
 #include <string>

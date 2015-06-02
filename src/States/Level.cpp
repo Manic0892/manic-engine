@@ -1,9 +1,10 @@
 /*!
-  \file   Level.cpp
-  \author Sean McGeer
-  \date   1/29/15
-  \brief
-    Implement the main game state manager.
+
+\file   Level.cpp
+\author Sean McGeer
+\date   1/29/15
+\brief  Implement the main game state manager.
+
 */
 
 #include "Level.h"

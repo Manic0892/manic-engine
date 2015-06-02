@@ -1,9 +1,10 @@
 /*!
-  \file   GameStateManager.cpp
-  \author Sean McGeer
-  \date   1/29/15
-  \brief
-    Implement the main game state manager.
+
+\file   GameStateManager.cpp
+\author Sean McGeer
+\date   1/29/15
+\brief  Implement the main game state manager.
+
 */
 
 #include "GameStateManager.h" // GameStateManager

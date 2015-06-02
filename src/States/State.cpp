@@ -1,9 +1,10 @@
 /*!
-  \file   State.cpp
-  \author Sean McGeer
-  \date   2/9/15
-  \brief
-    Implement the state object.
+
+\file   State.cpp
+\author Sean McGeer
+\date   2/9/15
+\brief  Implement the state object.
+
 */
 
 #include "State.h"

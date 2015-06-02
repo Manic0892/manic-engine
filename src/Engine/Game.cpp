@@ -1,9 +1,10 @@
 /*!
-  \file   Game.cpp
-  \author Sean McGeer
-  \date   1/29/15
-  \brief
-    Implement the main Game object.
+
+\file   Game.cpp
+\author Sean McGeer
+\date   1/29/15
+\brief  Implement the main Game object.
+
 */
 
 #include <iostream>           // cout, endl

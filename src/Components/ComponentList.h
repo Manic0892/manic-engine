@@ -4,7 +4,7 @@ namespace Manic_Engine
 namespace Components
 {
 
-enum BitfieldComponent
+enum BITFIELD_COMPONENT
 {
   bcNone            = -1,
   bcUndefined       =  0,

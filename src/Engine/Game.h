@@ -1,9 +1,10 @@
 /*!
-  \file   Game.h
-  \author Sean McGeer
-  \date   1/29/15
-  \brief
-    Define the main Game object.
+
+\file   Game.h
+\author Sean McGeer
+\date   1/29/15
+\brief  Define the main Game object.
+
 */
 
 #include "GameStateManager.h"

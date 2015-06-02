@@ -1,9 +1,10 @@
 /*!
-  \file   FrameRateController.h
-  \author Sean McGeer
-  \date   2/24/15
-  \brief
-    Define the FrameRateController class.
+
+\file   FrameRateController.h
+\author Sean McGeer
+\date   2/24/15
+\brief  Define the FrameRateController class.
+
 */
 
 #ifndef FRAMERATECONTROLLER_H

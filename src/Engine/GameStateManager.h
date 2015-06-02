@@ -1,9 +1,10 @@
 /*!
-  \file   GameStateManager.h
-  \author Sean McGeer
-  \date   1/29/15
-  \brief
-    Define the game state manager.
+
+\file   GameStateManager.h
+\author Sean McGeer
+\date   1/29/15
+\brief  Define the game state manager.
+
 */
 
 #include "../States/State.h"
