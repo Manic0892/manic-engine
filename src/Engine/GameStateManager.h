@@ -6,7 +6,7 @@
     Define the game state manager.
 */
 
-#include "State.h"
+#include "../States/State.h"
 
 #ifndef GAMESTATEMANAGER_H
 #define GAMESTATEMANAGER_H

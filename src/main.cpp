@@ -6,7 +6,7 @@
     Instantiate the main game object.
 */
 
-#include "Game.h"
+#include "Engine/Game.h"
 #include <getopt.h>
 #include <stdlib.h>
 

@@ -1,5 +1,5 @@
 /*!
-  \file   GameObject.h
+  \file   Entity.h
   \author Sean McGeer
   \date 6/1/15
   \brief
@@ -10,7 +10,7 @@
 namespace Manic_Engine
 {
 
-class GameObject
+class Entity
 {
   public:
     GameObject();

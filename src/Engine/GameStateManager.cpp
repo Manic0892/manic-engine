@@ -7,8 +7,8 @@
 */
 
 #include "GameStateManager.h" // GameStateManager
-#include "State.h"
-#include "Level.h"
+#include "../States/State.h"
+#include "../States/Level.h"
 
 namespace Manic_Engine
 {

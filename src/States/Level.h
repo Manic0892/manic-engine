@@ -34,7 +34,8 @@ class Level : public State
     void Unload();
 
   private:
-    GameObject 
+    int Health = 3;
+    int Lives = 2;
 };
 
 } // namespace States
