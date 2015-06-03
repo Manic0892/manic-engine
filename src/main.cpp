@@ -7,28 +7,16 @@
 
 */
 
-#include "Engine/Game.h"
-#include <getopt.h>
+#include "Game.h"
 #include <stdlib.h>
+
+#define FRAMERATE 60
 
 namespace ME = Manic_Engine;
 
-int main(int argc, char **argv)
+int main()
 {
-  int framerate = 60;
-  int opt;
-
-  while ((opt = getopt(argc, argv, "f:")) != -1)
-  {
-     switch (opt)
-     {
-      case 'f':
-        framerate = atoi(optarg);
-        break;
-     }
-  }
-
-  ME::Game gameObject(framerate);
+  ME::Game gameObject(FRAMERATE);
 
   gameObject.Run();
 
