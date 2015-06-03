@@ -8,6 +8,9 @@ affecting gameplay.
 
 */
 
+#include <vector>
+#include "Component.h"
+
 namespace Manic_Engine
 {
 
@@ -15,8 +18,11 @@ class Entity
 {
   public:
     Entity();
-	~Entity();
-    
+    ~Entity();
+  
+  protected:
+    std::vector<Component *> Components;
+    BITFIELD_COMPONENT ComponentsFlag;
 };
 
 }

@@ -15,6 +15,8 @@ namespace Manic_Engine
 
 extern Game* Manic;
 
+Entity::Entity()
+
 
 
 }

@@ -6,8 +6,8 @@ namespace Components
 
 enum BITFIELD_COMPONENT
 {
-  bcNone            = -1,
-  bcUndefined       =  0,
+  bcUndefined       = -1,
+  bcNone            =  0,
   
   bcTransform       =  1,
   bcDraw            =  1 <<  1
