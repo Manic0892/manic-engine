@@ -32,3 +32,5 @@ docs/
 
 # Binary file directory
 bin/*
+Debug/*
+Release/*
