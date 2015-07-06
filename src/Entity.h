@@ -8,6 +8,9 @@ affecting gameplay.
 
 */
 
+#ifndef ENTITY_H
+#define ENTITY_H
+
 #include <vector>
 #include "Component.h"
 #include "ComponentList.h"
@@ -29,3 +32,5 @@ class Entity
 };
 
 }
+
+#endif

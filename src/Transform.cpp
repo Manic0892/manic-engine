@@ -19,13 +19,17 @@ Transform::Transform() : Component("Transform", bcTransform) {}
 
 Transform::~Transform()
 {
-
 }
 
-void Transform::Init(int position)
+void Transform::Init()
 {
-  Position = position;
+  Position = 0;
 }
+
+//void Transform::Init(int position)
+//{
+//  Position = position;
+//}
 
 void Transform::Update()
 {

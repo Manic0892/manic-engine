@@ -7,6 +7,9 @@
 
 */
 
+#ifndef TRANSFORM_H
+#define TRANSFORM_H
+
 #include "Component.h"
 
 namespace Manic_Engine
@@ -30,6 +33,7 @@ public:
   Transform();
   ~Transform();
 
+  void Init();
   void Init(int position);
   void Update();
 
@@ -40,4 +44,6 @@ private:
 
 }
 
-}
+} // Manic_Engine
+
+#endif

@@ -9,6 +9,7 @@
 
 #include "Entity.h"
 #include "Game.h"
+#include "ComponentList.h"
 
 namespace Manic_Engine
 {
@@ -38,10 +39,10 @@ bool Entity::AddComponent(Components::INDICES_COMPONENT index)
   switch (index)
   {
     case (Components::INDICES_COMPONENT::icTransform) :
-      return true;
+      Components.push_back(new Components::Transform);
       break;
   }
 }
 
 
-}
+} // Manic_Engine
