@@ -10,7 +10,7 @@
 #include "Game.h"
 #include <stdlib.h>
 
-#define FRAMERATE 60
+#define FRAMERATE 1
 
 namespace ME = Manic_Engine;
 

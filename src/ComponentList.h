@@ -1,3 +1,6 @@
+#ifndef COMPONENTLIST_H
+#define COMPONENTLIST_H
+
 namespace Manic_Engine
 {
 
@@ -23,3 +26,5 @@ enum BITFIELD_COMPONENT
 }
 
 }
+
+#endif

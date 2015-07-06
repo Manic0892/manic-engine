@@ -37,8 +37,8 @@ bool Entity::AddComponent(Components::INDICES_COMPONENT index)
 {
   switch (index)
   {
-    case (Components::INDICES_COMPONENT::icTransform):
-
+    case (Components::INDICES_COMPONENT::icTransform) :
+      return true;
       break;
   }
 }
