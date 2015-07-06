@@ -26,10 +26,10 @@ void Transform::Init()
   Position = 0;
 }
 
-//void Transform::Init(int position)
-//{
-//  Position = position;
-//}
+void Transform::Init(int position)
+{
+  Position = position;
+}
 
 void Transform::Update()
 {
