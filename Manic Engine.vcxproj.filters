@@ -95,5 +95,8 @@
     <ClInclude Include="src\State.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
+    <ClInclude Include="src\ComponentInclude.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

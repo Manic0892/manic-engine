@@ -15,7 +15,7 @@ namespace Manic_Engine
 namespace Components
 {
 
-Transform::Transform() : Component("Transform", bcTransform) {}
+Transform::Transform() : Components::Component("Transform", bcTransform) {}
 
 Transform::~Transform()
 {

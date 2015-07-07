@@ -1,8 +1,6 @@
 #ifndef COMPONENTLIST_H
 #define COMPONENTLIST_H
 
-#include "Transform.h"
-
 namespace Manic_Engine
 {
 

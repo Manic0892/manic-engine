@@ -10,6 +10,7 @@
 #include "Entity.h"
 #include "Game.h"
 #include "ComponentList.h"
+#include "ComponentInclude.h"
 
 namespace Manic_Engine
 {
@@ -42,6 +43,8 @@ bool Entity::AddComponent(Components::INDICES_COMPONENT index)
       Components.push_back(new Components::Transform);
       break;
   }
+
+  return "FUCK YOU";
 }
 
 

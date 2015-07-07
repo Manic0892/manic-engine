@@ -26,7 +26,7 @@ namespace Components
 
 */
 
-class Transform : public Component
+class Transform : public Components::Component
 {
 
 public:

@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Component.h" />
+    <ClInclude Include="src\ComponentInclude.h" />
     <ClInclude Include="src\ComponentList.h" />
     <ClInclude Include="src\Entity.h" />
     <ClInclude Include="src\FrameRateController.h" />
