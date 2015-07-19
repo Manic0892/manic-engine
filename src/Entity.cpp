@@ -44,7 +44,7 @@ bool Entity::AddComponent(Components::INDICES_COMPONENT index)
       break;
   }
 
-  return "FUCK YOU";
+  return true;
 }
 
 
