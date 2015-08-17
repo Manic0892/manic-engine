@@ -82,6 +82,7 @@
     <ClCompile Include="src\Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Graphics.h" />
     <ClInclude Include="src\Component.h" />
     <ClInclude Include="src\ComponentInclude.h" />
     <ClInclude Include="src\ComponentList.h" />
@@ -92,6 +93,7 @@
     <ClInclude Include="src\Level.h" />
     <ClInclude Include="src\State.h" />
     <ClInclude Include="src\Transform.h" />
+    <ClInclude Include="System.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

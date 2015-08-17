@@ -37,6 +37,9 @@
     <Filter Include="Source Files\States">
       <UniqueIdentifier>{96b12988-9ff3-4421-a9f6-2f3bbbf2aa27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Systems">
+      <UniqueIdentifier>{df0c50d9-9329-4847-af91-74554123cbdf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -97,6 +100,12 @@
     </ClInclude>
     <ClInclude Include="src\ComponentInclude.h">
       <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>Header Files\Systems</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
