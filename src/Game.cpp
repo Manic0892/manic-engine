@@ -27,6 +27,7 @@ Game::Game(int framerate)
 
   GSM = new GameStateManager();
   FRC = new FrameRateController(FrameRate);
+  Graphics = new Systems::Graphics();
 }
 
 /*!
@@ -37,6 +38,7 @@ Game::~Game()
 {
   delete GSM;
   delete FRC;
+  delete Graphics;
 }
 
 /*!

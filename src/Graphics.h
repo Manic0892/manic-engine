@@ -11,7 +11,9 @@ namespace Systems
 
 class Graphics : public System
 {
-  
+  public:
+    Graphics(Components::BITFIELD_COMPONENT id);
+    void Update();
 };
 
 } // Systems

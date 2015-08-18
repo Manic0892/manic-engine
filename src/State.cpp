@@ -61,4 +61,9 @@ void State::SetName(std::string name)
   Name = name;
 }
 
+void State::AddEntity(Entity entityToAdd)
+{
+  Entities.push_back(entityToAdd);
+}
+
 } // namespace Manic_Engine

@@ -40,6 +40,9 @@ Level::~Level()
 */
 void Level::Load()
 {
+  Entity newEntity;
+  newEntity.AddComponent(Components::INDICES_COMPONENT::icDraw);
+  AddEntity(newEntity);
   Lives = 2;
   std::cout << "Level Load." << std::endl;
 }

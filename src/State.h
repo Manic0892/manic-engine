@@ -8,6 +8,8 @@
 */
 
 #include <string>
+#include <vector>
+#include "Entity.h"
 
 #ifndef STATE_H
 #define STATE_H
@@ -37,9 +39,13 @@ class State
     std::string GetName() const;
     void SetName(const std::string name);
 
+    void AddEntity(Entity entityToAdd);
+
   private:
     /*! The name of this state. */
     std::string Name;
+    /*! The vector of all objects loaded by this state. */
+    std::vector<Entity> Entities;
 };
 
 } // namespace Manic_Engine

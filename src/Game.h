@@ -9,6 +9,7 @@
 
 #include "GameStateManager.h"
 #include "FrameRateController.h"
+#include "Graphics.h"
 
 namespace Manic_Engine
 {
@@ -31,6 +32,8 @@ class Game
     GameStateManager *GSM;
     /*! This game's frame rate controller.  */
     FrameRateController *FRC;
+    /*! This game's graphics system.        */
+    Systems::Graphics *Graphics;
 
   private:
     /*! The frames per second.              */

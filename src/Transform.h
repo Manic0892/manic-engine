@@ -26,7 +26,7 @@ namespace Components
 
 */
 
-class Transform : public Components::Component
+class Transform : public Component
 {
 
 public:
@@ -42,7 +42,7 @@ private:
 
 };
 
-}
+} // Components
 
 } // Manic_Engine
 

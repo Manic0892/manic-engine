@@ -76,15 +76,18 @@
     <ClCompile Include="src\FrameRateController.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameStateManager.cpp" />
+    <ClCompile Include="src\Graphics.cpp" />
     <ClCompile Include="src\Level.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\State.cpp" />
+    <ClCompile Include="src\System.cpp" />
     <ClCompile Include="src\Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Component.h" />
     <ClInclude Include="src\ComponentInclude.h" />
     <ClInclude Include="src\ComponentList.h" />
+    <ClInclude Include="src\Draw.h" />
     <ClInclude Include="src\Entity.h" />
     <ClInclude Include="src\FrameRateController.h" />
     <ClInclude Include="src\Game.h" />

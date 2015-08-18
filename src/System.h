@@ -13,7 +13,7 @@ namespace Systems
 class System
 {
   public:
-    virtual void Init() = 0;
+    System(Components::BITFIELD_COMPONENT id);
     virtual void Update() = 0;
 
   private:
